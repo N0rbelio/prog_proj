@@ -4,11 +4,16 @@
     },
 
     {
-        "id":2,"op":"OR", "opt1":"false" ,"opt2":"false"
+        "id":2,"op":"OR", "opt1":"false" ,"opt2":"false" 
     },
 
     {
         "id":3,"op":"NOT", "opt1":"true" ,"opt2":"true"
+    },
+    
+    "teoria",
+    {
+        "id":4,"op":"AND", "opt1":"%valor%" ,"opt2":"true", "POS":"2"
     }
 
 ]
