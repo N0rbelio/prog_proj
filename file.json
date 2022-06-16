@@ -1,5 +1,14 @@
 [
     {
-        "id":6,"op":"AND", "opt1":"true" ,"opt2":"false"
+        "id":1,"op":"AND", "opt1":"true" ,"opt2":"false"
+    },
+
+    {
+        "id":2,"op":"OR", "opt1":"false" ,"opt2":"false"
+    },
+
+    {
+        "id":3,"op":"NOT", "opt1":"true" ,"opt2":"true"
     }
+
 ]
