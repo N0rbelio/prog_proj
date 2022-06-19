@@ -12,10 +12,10 @@
     }, 
 
     {
-        "id":4,"op":"AND", "opt1":"true" ,"resultado3": ""
+        "id":4,"op":"AND", "opt1":"resultado0", "opt2":"resultado1","resultado3": ""
     },
 
     {
-        "id":5,"op":"OR", "opt1":"val", "opt2":"val" ,"resultado4": ""
-    },
+        "id":5,"op":"OR", "opt1":"resultado3", "opt2":"resultado2" ,"resultado4": ""
+    }
 ]
