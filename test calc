@@ -12,21 +12,6 @@ def extract_from_text(text):
             pass
     return l
  
-# calculating LCM
-def lcm(a,b):
-    L=a if a>b else b
-    while L<=a*b:
-        if L%a==0 and L%b==0:
-            return L
-        L+=1
- 
-# calculating HCF
-def hcf(a,b):
-    H=a if a<b else b
-    while H>=1:
-        if a%H==0 and b%H==0:
-            return H
-        H-=1
  
 # Addition
 def add(a,b):
@@ -63,7 +48,7 @@ def sorry():
 # Operations - performed on the basis of text tokens
 operations={'ADD':add,'PLUS':add,'SUM':add,'ADDITION':add,
             'SUB':sub,'SUBTRACT':sub, 'MINUS':sub,
-            'DIFFERENCE':sub,'LCM':lcm,'HCF':hcf,
+            'DIFFERENCE':sub,
             'PRODUCT':mul, 'MULTIPLY':mul,'MULTIPLICATION':mul,
             'DIVISION':div,'MOD':mod,'REMAINDER'
             :mod,'MODULAS':mod}
