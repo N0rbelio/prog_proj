@@ -1,10 +1,10 @@
 [
     {
-        "id":1,"op":"AND", "opt1":"true" ,"opt2":"false", "resultado0": ""
+        "id":1,"op":"AND", "opt1":"1" ,"opt2":"0", "resultado0": ""
     },
 
     {
-        "id":2,"op":"OR", "opt1":"true" ,"opt2":"false" ,"resultado1": ""
+        "id":2,"op":"OR", "opt1":"1" ,"opt2":"0" ,"resultado1": ""
     },
 
     {
@@ -12,7 +12,10 @@
     }, 
 
     {
-        "id":4,"op":"NOT", "opt1":"true" ,"resultado3": ""
+        "id":4,"op":"AND", "opt1":"true" ,"resultado3": ""
+    },
 
-    }
+    {
+        "id":5,"op":"OR", "opt1":"val", "opt2":"val" ,"resultado4": ""
+    },
 ]
