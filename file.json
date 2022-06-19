@@ -1,13 +1,18 @@
 [
     {
-        "id":1,"op":"AND", "opt1":"true" ,"opt2":"false", "resultado": ""
+        "id":1,"op":"AND", "opt1":"true" ,"opt2":"false", "resultado0": ""
     },
 
     {
-        "id":2,"op":"OR", "opt1":"%true%" ,"opt2":"false" ,"resultado": ""
+        "id":2,"op":"OR", "opt1":"true" ,"opt2":"false" ,"resultado1": ""
     },
 
     {
-        "id":3,"op":"NOT", "opt1":"true" ,"opt2":""
+        "id":3,"op":"NOT", "opt1":"resultado1" ,"resultado2": ""
+    }, 
+
+    {
+        "id":4,"op":"NOT", "opt1":"true" ,"resultado3": ""
+
     }
 ]

@@ -1,0 +1,6 @@
+for 1 to 5
+    if op= "And"
+        dicionario comparar and = resultado = resultado0+1 
+        elif se é "or"
+            dicionario comparar or = resultado = resultado0+1 
+           elif se é "not"
