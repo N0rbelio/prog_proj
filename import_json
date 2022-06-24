@@ -5,6 +5,7 @@ for i in file ['dados']:
     print (i)
 a.close()
 
+
 for i in range(1, 5):
     if file["op"] == file_AND["AND"]:
         # load do json AND
@@ -14,19 +15,19 @@ for i in range(1, 5):
                 print (i)
             f.close()
 
-    elif file["op"] == file_OR["OR"]:
-        # load do json OR
-            o = open ('file_OR.json')
-            file_OR=json.load(o)
-            for i in file ['file_OR']:
-                print (i)
-            o.close()
+    # elif file["op"] == file_OR["OR"]:
+    #     # load do json OR
+    #         o = open ('file_OR.json')
+    #         file_OR=json.load(o)
+    #         for i in file ['file_OR']:
+    #             print (i)
+    #         o.close()
 
-    else: 
-        file["op"] == file_NOT["NOT"]
-        # load do json OR
-        n = open ('file_NOT.json')
-        file_NOT=json.load(n)
-        for i in file ['file_NOT']:
-            print (i)
-        n.close()
+    # else: 
+    #     file["op"] == file_NOT["NOT"]
+    #     # load do json NOT
+    #     n = open ('file_NOT.json')
+    #     file_NOT=json.load(n)
+    #     for i in file ['file_NOT']:
+    #         print (i)
+    #     n.close()
