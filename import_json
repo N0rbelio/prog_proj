@@ -1,7 +1,7 @@
 import json
-a = open ('file.json')
+a = open ("file.json")
 file=json.load(a)
-for i in file ['dados']:
+for i in file ["dados"]:
     print (i)
 a.close()
 
