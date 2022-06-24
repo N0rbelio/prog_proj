@@ -1,7 +1,7 @@
 {
     "AND":[
             {
-                "id":1,"op":"AND", "opt1":"1" ,"opt2":"0", "resultado0": ""
+                "id":1,"op":"AND", "opt1":"1" ,"opt2":"0", "resultado0": "0"
             }
     ]
 }
