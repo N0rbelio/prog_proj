@@ -1,0 +1,9 @@
+import json
+f = open ('file.json')
+
+file=json.load(f)
+
+for i in file ['dados']:
+    print (i)
+    
+f.close()
