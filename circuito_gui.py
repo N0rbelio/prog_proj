@@ -57,8 +57,7 @@ def open_toplevel():
 #Importar demo
 def test_design():
     portas_logicas.gates() #this call a function from example file
-    C.pack()
-    
+
 #Apagar canvas
 def erase_design():
      C.delete('all')
