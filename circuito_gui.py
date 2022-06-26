@@ -18,6 +18,9 @@ main.geometry('600x400') # Definir tamanho
 main.wm_title("Design circuito") # Definir titulo da janela
 main.iconbitmap("favicon.ico")
 main.resizable(False, False)
+#iniciar blank canvas
+C = Canvas(main, bg="white", height=340, width=590)
+C.pack()
 
 #Explorador de ficheiros
 def browseFiles():
@@ -50,6 +53,16 @@ def open_toplevel():
 
     top.mainloop()
 
+#Canvas desenho das logicas (Teste)
+def test_design():
+    line = C.create_line(108, 120, 320, 40, fill="green")
+    oval1 = C.create_oval(80, 30, 140, 150, fill="blue")
+    C.pack()
+
+#Apagar canvas
+def erase_design():
+     C.delete('all')
+
 #Cria janela ajuda
 def ajuda_aguh():
     ajuda = Toplevel()
@@ -64,27 +77,13 @@ def ajuda_aguh():
     # using place method we can set the position of label
     ll1.place(x=5, y=50)
 
-#Canvas desenho das logicas (Teste)
-def test_design():
-    C = Canvas(main, bg="white", height=340, width=590)
-    
-    line = C.create_line(108, 120,
-                        320, 40,
-                        fill="green")
-    
-    oval1 = C.create_oval(80, 30, 140,
-                        150,
-                        fill="blue")
-    
-    C.pack()
-
 #Texto em baixo
 ll1 = Label(main,text ='Por favor, abra um ficheiro!')
 # using place method we can set the position of label
 ll1.place(x=5, y=352)
 #Criar botão
 btn = Button(main, text = 'Reset',
-                command = C.delete('all'))
+                command = erase_design)
 btn.place(x=517, y=348)
 btn2 = Button(main, text = 'Calcular',
                 command = test_design)
