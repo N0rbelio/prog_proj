@@ -5,6 +5,7 @@ from tkinter import ttk
 import webbrowser
 # import filedialog module
 from tkinter import filedialog
+import portas_logicas
 
 class Window(Frame):
     def __init__(self, master=None):
@@ -53,18 +54,17 @@ def open_toplevel():
 
     top.mainloop()
 
-#Canvas desenho das logicas (Teste)
+#Importar demo
 def test_design():
-    line = C.create_line(108, 120, 320, 40, fill="green")
-    oval1 = C.create_oval(80, 30, 140, 150, fill="blue")
+    portas_logicas.gates() #this call a function from example file
     C.pack()
-
+    
 #Apagar canvas
 def erase_design():
      C.delete('all')
 
 #Cria janela ajuda
-def ajuda_aguh():
+def ajuda_janela():
     ajuda = Toplevel()
     ajuda.geometry("500x400")
     ajuda.title("Ajuda")
@@ -86,7 +86,7 @@ btn = Button(main, text = 'Reset',
                 command = erase_design)
 btn.place(x=517, y=348)
 btn2 = Button(main, text = 'Calcular',
-                command = test_design)
+                command = None)
 btn2.place(x=439, y=348)
 
 # Cria menubar
@@ -95,13 +95,14 @@ menubar = Menu(main)
 file = Menu(menubar, tearoff = 0)
 menubar.add_cascade(label ='Ficheiro', menu = file)
 file.add_command(label ='Abrir...', command = browseFiles)
+file.add_command(label ='Modo DEMO', command = test_design)
 file.add_separator()
 file.add_command(label ='Sair', command = main.destroy)
   
 # Adiciona menu ajuda
 help_ = Menu(menubar, tearoff = 0)
 menubar.add_cascade(label ='Ajuda', menu = help_)
-help_.add_command(label ='Ajuda - Guia', command = ajuda_aguh)
+help_.add_command(label ='Ajuda - Guia', command = ajuda_janela)
 help_.add_separator()
 help_.add_command(label ='Sobre', command = open_toplevel)
 
