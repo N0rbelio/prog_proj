@@ -21,11 +21,8 @@ main.iconbitmap("favicon.ico")
 #Explorador de ficheiros
 def browseFiles():
     filename = filedialog.askopenfilename(initialdir = "/",
-                                          title = "Select a File",
-                                          filetypes = (("Text files",
-                                                        "*.txt*"),
-                                                       ("all files",
-                                                        "*.*")))
+                                          title = "Selecione o ficheiro com as intruções",
+                                          filetypes = (("Text files", "*.txt*"), ("All files", "*.*")))
 
 #Cria janela sobre
 def open_toplevel():
@@ -82,15 +79,15 @@ btn.place(x=517, y=348)
 menubar = Menu(main)
 # Adiciona Menu e commandos
 file = Menu(menubar, tearoff = 0)
-menubar.add_cascade(label ='File', menu = file)
-file.add_command(label ='Open...', command = browseFiles)
+menubar.add_cascade(label ='Ficheiro', menu = file)
+file.add_command(label ='Abrir...', command = browseFiles)
 file.add_separator()
-file.add_command(label ='Exit', command = main.destroy)
+file.add_command(label ='Sair', command = main.destroy)
   
 # Adiciona menu ajuda
 help_ = Menu(menubar, tearoff = 0)
-menubar.add_cascade(label ='Help', menu = help_)
-help_.add_command(label ='Ajuda', command = None)
+menubar.add_cascade(label ='Ajuda', menu = help_)
+help_.add_command(label ='Ajuda - Guia', command = None)
 help_.add_separator()
 help_.add_command(label ='Sobre', command = open_toplevel)
 
