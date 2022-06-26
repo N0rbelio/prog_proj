@@ -1,0 +1,36 @@
+# Inicializar o GUI tkinter
+root = Tk()
+app = Window(root)
+
+# Opçoes janela
+root.geometry('600x380') # Definir tamanho
+root.wm_title("Design circuito") # Definir titulo da janela
+
+#Criar botão
+btn = Button(root, text = 'Sair',
+                command = root.destroy)
+btn.place(x=515, y=345)
+  
+# creating tkinter window
+root = Tk()
+root.title('Menu Demonstration')
+root.geometry('600x380') # Definir tamanho0
+
+
+
+
+
+# iniciar
+win= Tk()
+#janela
+def open_win():
+   new= Toplevel(win)
+   new.geometry("750x250")
+   new.title("New Window")
+   #Create a Label in New window
+   Label(new, text="Hey, Howdy?", font=('Helvetica 17 bold')).pack(pady=30)
+#Create a label
+Label(win, text= "Click the below button to Open a New Window", font= ('Helvetica 17 bold')).pack(pady=30)
+#Create a button to open a New Window
+ttk.Button(win, text="Open", command=open_win).pack()
+win.mainloop()
