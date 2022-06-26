@@ -1,11 +1,11 @@
 {
-    "AND":[
+    "OR":[
             {
-                "id":1, "opt1":true ,"opt2":false, "resultado":false
+                "id":1, "opt1":true ,"opt2":false, "resultado":true
             },
 
             {
-                "id":2, "opt1":false ,"opt2":true, "resultado": false
+                "id":2, "opt1":false ,"opt2":true, "resultado": true
             },
 
             {
