@@ -11,11 +11,11 @@ for i in file ["dados"]:
 a.close()
 
 
-for i in range(1):
-    if file:'opt'== 'NOT' 
+for i in range(1,2):
+    if file:'op'== 'NOT' 
     print(i)
 
-    if file.opt1()== True:
+    if file.opt1("")== True:
         file.resultado2== False
     elif file.opt1()== False:
         file.resultado2== True
