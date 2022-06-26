@@ -16,7 +16,7 @@ f.close()
 
 
 for i in range(1, 5):
-    if file:'op'== 'AND' 
+    if file:'opt'== 'AND' 
     print(i)
     print(j)
     ####if file.opt1()file.opt2 == file_AND.opt1, file_AND.opt2) 
