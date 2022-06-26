@@ -34,3 +34,6 @@ Label(win, text= "Click the below button to Open a New Window", font= ('Helvetic
 #Create a button to open a New Window
 ttk.Button(win, text="Open", command=open_win).pack()
 win.mainloop()
+
+
+anchor ='sw' (ancorar)
