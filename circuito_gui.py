@@ -14,8 +14,9 @@ class Window(Frame):
 # Inicializar o GUI tkinter
 main = Tk()
 # Opçoes janela main
-main.geometry('600x380') # Definir tamanho
+main.geometry('600x400') # Definir tamanho
 main.wm_title("Design circuito") # Definir titulo da janela
+main.iconbitmap("favicon.ico")
 
 #Explorador de ficheiros
 def browseFiles():
@@ -75,7 +76,7 @@ ll1.place(x=5, y=352)
 #Criar botão
 btn = Button(main, text = 'Poosay',
                 command = main.destroy)
-btn.place(x=517, y=350)
+btn.place(x=517, y=348)
 
 # Cria menubar
 menubar = Menu(main)
