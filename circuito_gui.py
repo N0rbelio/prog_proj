@@ -64,19 +64,19 @@ def ajuda_aguh():
     # using place method we can set the position of label
     ll1.place(x=5, y=50)
 
-
-#Canvas desenho das logicas
-C = Canvas(main, bg="white", height=340, width=590)
- 
-line = C.create_line(108, 120,
-                     320, 40,
-                     fill="green")
- 
-oval1 = C.create_oval(80, 30, 140,
-                     150,
-                     fill="blue")
- 
-C.pack()
+#Canvas desenho das logicas (Teste)
+def test_design():
+    C = Canvas(main, bg="white", height=340, width=590)
+    
+    line = C.create_line(108, 120,
+                        320, 40,
+                        fill="green")
+    
+    oval1 = C.create_oval(80, 30, 140,
+                        150,
+                        fill="blue")
+    
+    C.pack()
 
 #Texto em baixo
 ll1 = Label(main,text ='Por favor, abra um ficheiro!')
@@ -84,10 +84,10 @@ ll1 = Label(main,text ='Por favor, abra um ficheiro!')
 ll1.place(x=5, y=352)
 #Criar botão
 btn = Button(main, text = 'Reset',
-                command = main.destroy)
+                command = C.delete('all'))
 btn.place(x=517, y=348)
 btn2 = Button(main, text = 'Calcular',
-                command = None)
+                command = test_design)
 btn2.place(x=439, y=348)
 
 # Cria menubar
