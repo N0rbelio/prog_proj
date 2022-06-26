@@ -1,21 +1,9 @@
-from difflib import Differ
-from ast import Compare
-from cgi import print_arguments
 import json
-from operator import truediv
+with open('test_file.json') as f:
+    data = json.load(f)
 
-a = open ("test_file.json")
-file=json.load(a)
-for i in file ["dados"]:
-    print (i)
-a.close()
+for item in data["dados"]:
+    item["resultado2"] = item["resultado2"].replace("", item["opt2"])
 
-
-for i in range(1,2):
-    if file:'op'== 'NOT' 
-    print(i)
-
-    if file.opt1("")== True:
-        file.resultado2== False
-    elif file.opt1()== False:
-        file.resultado2== True
+with open("test_file.json", "w") as f:
+    json.dump(data, f)
