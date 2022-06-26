@@ -1,9 +1,4 @@
-from ast import And
-from difflib import Differ
-from ast import Compare
-from cgi import print_arguments
 import json
-from operator import truediv
 
 with open('file.json') as f:
     file = json.load(f)
@@ -12,21 +7,17 @@ with open('file_AND.json') as f:
     file_AND = json.load(f)
 
  #if file.opt1()file.opt2 == file_AND.opt1, file_AND.opt2) 
+for i in range(1,5):
+    for test in file['op']: 
+        if file["op"] == "AND":
+            for i in range(1,4):
+                for file_AND in file_AND['AND']: 
 
-#with open('test_file.json') as f:
-#    data = json.load(f)
-#for item in data['dados']:
-#   item['resultado2'] = item['resultado2'].replace('$home', item['id'])
+                    if (file['opt1'] and file_AND["opt1"]) and (file['opt2'] and file_AND["opt2"]):
+                        file["resultado0"].replace("", file_AND["resultado"])
 
-for i in range(1, 5):                
-    for item in file["dados"]:
-        if file:["op"] == ["AND"]
-        for j in range(1, 4):
-            for item in file['dados']:
-                for putas in file_AND['AND']:    
-                    if item["opt1"]== putas["opt1"]:
-                        item["resultado0"].replace("", putas["resultado"])
-with open('new_data.json', 'w') as f:
+            
+with open('file.json', 'w') as f:
     json.dump(file, f)
 
 
