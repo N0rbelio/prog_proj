@@ -17,6 +17,7 @@ main = Tk()
 main.geometry('600x400') # Definir tamanho
 main.wm_title("Design circuito") # Definir titulo da janela
 main.iconbitmap("favicon.ico")
+main.resizable(False, False)
 
 #Explorador de ficheiros
 def browseFiles():
@@ -29,6 +30,7 @@ def open_toplevel():
     top = Toplevel()
     top.geometry("500x130")
     top.title("Sobre")
+    top.resizable(False, False)
     l2 = Label(top, text = "Este projeto foi criado por: Andre Oliveira, Daniel Oleksiychuk e Tiago Loureiro")
     l2.pack()
 
@@ -53,6 +55,7 @@ def ajuda_aguh():
     ajuda = Toplevel()
     ajuda.geometry("500x400")
     ajuda.title("Ajuda")
+    ajuda.resizable(False, False)
 
     titlo = Label(ajuda, text = "Ajuda para Design Circuito", font=("Arial", 20))
     titlo.pack()
@@ -83,6 +86,9 @@ ll1.place(x=5, y=352)
 btn = Button(main, text = 'Reset',
                 command = main.destroy)
 btn.place(x=517, y=348)
+btn2 = Button(main, text = 'Calcular',
+                command = None)
+btn2.place(x=439, y=348)
 
 # Cria menubar
 menubar = Menu(main)
