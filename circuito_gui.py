@@ -22,7 +22,7 @@ main.iconbitmap("favicon.ico")
 def browseFiles():
     filename = filedialog.askopenfilename(initialdir = "/",
                                           title = "Selecione o ficheiro com as intruções",
-                                          filetypes = (("Ficheiros de texto", "*.txt*"), ("Ficheiros JSON", "*.json*"), ("Ficheiros LogicView", "*.lcvw*"), ("Todos os ficheiros", "*.*")))
+                                          filetypes = (("Ficheiros JSON", "*.json*"), ("Ficheiros LogicView", "*.lcvw*"), ("Todos os ficheiros", "*.*")))
 
 #Cria janela sobre
 def open_toplevel():
@@ -48,6 +48,20 @@ def open_toplevel():
 
     top.mainloop()
 
+#Cria janela ajuda
+def ajuda_aguh():
+    ajuda = Toplevel()
+    ajuda.geometry("500x400")
+    ajuda.title("Ajuda")
+
+    titlo = Label(ajuda, text = "Ajuda para Design Circuito", font=("Arial", 20))
+    titlo.pack()
+
+    ll1 = Label(ajuda,text ='Augh, Im horny. Come on!')
+    # using place method we can set the position of label
+    ll1.place(x=5, y=50)
+
+
 #Canvas desenho das logicas
 C = Canvas(main, bg="white", height=340, width=590)
  
@@ -56,10 +70,6 @@ line = C.create_line(108, 120,
                      fill="green")
  
 oval1 = C.create_oval(80, 30, 140,
-                     150,
-                     fill="blue")
- 
-oval2 = C.create_oval(80, 30, 140,
                      150,
                      fill="blue")
  
@@ -86,7 +96,7 @@ file.add_command(label ='Sair', command = main.destroy)
 # Adiciona menu ajuda
 help_ = Menu(menubar, tearoff = 0)
 menubar.add_cascade(label ='Ajuda', menu = help_)
-help_.add_command(label ='Ajuda - Guia', command = None)
+help_.add_command(label ='Ajuda - Guia', command = ajuda_aguh)
 help_.add_separator()
 help_.add_command(label ='Sobre', command = open_toplevel)
 
