@@ -1,21 +1,14 @@
-from difflib import Differ
-from ast import Compare
-from cgi import print_arguments
 import json
-from operator import truediv
+with open("test_file.json", "r") as jsonFile:
+    data = json.load(jsonFile)
 
-a = open ("test_file.json")
-file=json.load(a)
-for i in file ["dados"]:
-    print (i)
-a.close()
+data["location"] = "NewPath"
 
+with open("test_file.json", "r+") as jsonFile:
+    data = json.load(jsonFile)
 
-for i in range(1,2):
-    if file:'op'== 'NOT' 
-    print(i)
+    data["location"] = "NewPath"
 
-    if file.opt1("")== True:
-        file.resultado2== False
-    elif file.opt1()== False:
-        file.resultado2== True
+    jsonFile.seek(0)  # rewind
+    json.dump(data, jsonFile)
+    jsonFile.truncate()

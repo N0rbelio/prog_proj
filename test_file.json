@@ -1,7 +1,18 @@
 {
-    "dados":[
-            {
-                "id":1,"op":"NOT", "opt1":true ,"resultado2":""
-            }
-        ]
-}
+    "location": "/home/karim/storm/project/storm/devqa/default.xml",
+    "Id": "0",
+    "resultDir": "",
+    "resultFile": "",
+    "mode": "replay",
+    "className":  "",
+    "method":  "METHOD"
+    }
+    {
+        "resultDir": "",
+        "location": "pathaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "method": "METHOD",
+        "className": "",
+        "mode": "replay",
+        "Id": "0",
+        "resultFile": ""
+    }
