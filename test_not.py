@@ -1,14 +1,9 @@
 import json
-with open("test_file.json", "r") as jsonFile:
-    data = json.load(jsonFile)
+with open('test_file.json') as f:
+    data = json.load(f)
 
-data["location"] = "NewPath"
+for item in data["dados"]:
+    item["resultado2"] = item["resultado2"].replace("", item["opt2"])
 
-with open("test_file.json", "r+") as jsonFile:
-    data = json.load(jsonFile)
-
-    data["location"] = "NewPath"
-
-    jsonFile.seek(0)  # rewind
-    json.dump(data, jsonFile)
-    jsonFile.truncate()
+with open("test_file.json", "w") as f:
+    json.dump(data, f)
