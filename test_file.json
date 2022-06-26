@@ -1,0 +1,7 @@
+{
+    "dados":[
+            {
+                "id":3,"op":"NOT", "opt1":"resultado1" ,"resultado2":""
+            }
+        ]
+}
