@@ -27,8 +27,8 @@ def browseFiles():
 #Cria janela sobre
 def open_toplevel():
     top = Toplevel()
-    top.geometry("500x100")
-    top.title("Squirt")
+    top.geometry("500x130")
+    top.title("Sobre")
     l2 = Label(top, text = "Este projeto foi criado por: Andre Oliveira, Daniel Oleksiychuk e Tiago Loureiro")
     l2.pack()
 
@@ -43,8 +43,8 @@ def open_toplevel():
     # Resizing image to fit on button
     photoimage = photo.subsample(3, 3)
     # image on LEFT side of button
-    Button(top, text = '  Clit !', command = openweb, image = photoimage,
-                        compound = LEFT).pack(side = TOP)
+    Button(top, text = 'Abrir Repositorio', command = openweb, image = photoimage,
+                        compound = TOP).pack(side = TOP)
 
     top.mainloop()
 
@@ -57,7 +57,7 @@ def ajuda_aguh():
     titlo = Label(ajuda, text = "Ajuda para Design Circuito", font=("Arial", 20))
     titlo.pack()
 
-    ll1 = Label(ajuda,text ='Augh, Im horny. Come on!')
+    ll1 = Label(ajuda,text ='O programa permite abrir ficheiros JSON ou LogicView para demonstrar as portas logicas num plano. ', wraplength=490)
     # using place method we can set the position of label
     ll1.place(x=5, y=50)
 
@@ -76,11 +76,11 @@ oval1 = C.create_oval(80, 30, 140,
 C.pack()
 
 #Texto em baixo
-ll1 = Label(main,text ='CLiT Industries, Hornay everyday!')
+ll1 = Label(main,text ='Por favor, abra um ficheiro!')
 # using place method we can set the position of label
 ll1.place(x=5, y=352)
 #Criar botão
-btn = Button(main, text = 'Poosay',
+btn = Button(main, text = 'Reset',
                 command = main.destroy)
 btn.place(x=517, y=348)
 
