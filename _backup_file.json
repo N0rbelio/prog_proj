@@ -1,7 +1,7 @@
 {
     "dados":[
             {
-                "id":1,"op":"AND", "opt1":"true" ,"opt2":"false", "resultado0":""
+                "id":1,"op":"AND", "opt1":"1" ,"opt2":false, "resultado0":""
             },
 
             {

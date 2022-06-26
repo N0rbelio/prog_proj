@@ -1,26 +1,43 @@
+from ast import And
 from difflib import Differ
 from ast import Compare
 from cgi import print_arguments
 import json
 from operator import truediv
-a = open ("file.json")
-file=json.load(a)
-for i in file ["dados"]:
-    print (i)
-a.close()
 
-f = open ("file_AND.json")
-file_AND=json.load(f)
-for j in file_AND ["AND"]:
-    print (j)
-f.close()
+with open('file.json') as f:
+    file = json.load(f)
+
+with open('file_AND.json') as f:
+    file_AND = json.load(f)
+
+ #if file.opt1()file.opt2 == file_AND.opt1, file_AND.opt2) 
+
+#with open('test_file.json') as f:
+#    data = json.load(f)
+#for item in data['dados']:
+#   item['resultado2'] = item['resultado2'].replace('$home', item['id'])
+
+for i in range(1, 5):                
+    for item in file["dados"]:
+        if file:["op"] == ["AND"]
+        for j in range(1, 4):
+            for item in file['dados']:
+                for putas in file_AND['AND']:    
+                    if item["opt1"]== putas["opt1"]:
+                        item["resultado0"].replace("", putas["resultado"])
+with open('new_data.json', 'w') as f:
+    json.dump(file, f)
 
 
-for i in range(1, 5):
-    if file:'opt'== 'AND' 
-    print(i)
-    print(j)
-    #if file.opt1()file.opt2 == file_AND.opt1, file_AND.opt2) 
+                #if item["opt1"]== file_AND["opt1"] and item["opt2"] == file_AND["opt2"]:
+                  #  item["resultado2"].replace("", file_AND["resultado"])                    
+
+          #  for item in data['dados']:
+
+            #    item['resultado2'] = item['resultado2'].replace("", item['resultado1'])
+
+    ####if file.opt1()file.opt2 == file_AND.opt1, file_AND.opt2) 
 
 
 # elif file["op"] == file_OR["OR"]:
@@ -39,7 +56,3 @@ for i in range(1, 5):
 #     for i in file ['file_NOT']:
 #         print (i)
 #     n.close()
-    if file.opt1()== True:
-        file.resultado2== False
-    elif file.opt1()== False:
-        file.resultado2== True
