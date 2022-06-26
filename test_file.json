@@ -1,1 +1,7 @@
-{"dados": [{"id": 1, "op": "NOT", "opt1": "true", "resultado2": "false", "opt2": "false"}]}
+{
+    "dados":[
+            {
+                "id":1,"op":"NOT", "opt1":"true" ,"resultado2":"", "resultado1":"fruzanas"
+            }
+        ]
+}
