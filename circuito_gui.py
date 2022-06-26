@@ -22,7 +22,7 @@ main.iconbitmap("favicon.ico")
 def browseFiles():
     filename = filedialog.askopenfilename(initialdir = "/",
                                           title = "Selecione o ficheiro com as intruções",
-                                          filetypes = (("Text files", "*.txt*"), ("All files", "*.*")))
+                                          filetypes = (("Ficheiros de texto", "*.txt*"), ("Ficheiros JSON", "*.json*"), ("Ficheiros LogicView", "*.lcvw*"), ("Todos os ficheiros", "*.*")))
 
 #Cria janela sobre
 def open_toplevel():
@@ -49,8 +49,7 @@ def open_toplevel():
     top.mainloop()
 
 #Canvas desenho das logicas
-C = Canvas(main, bg="yellow",
-           height=340, width=590)
+C = Canvas(main, bg="white", height=340, width=590)
  
 line = C.create_line(108, 120,
                      320, 40,
