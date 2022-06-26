@@ -4,17 +4,16 @@ from cgi import print_arguments
 import json
 from operator import truediv
 
-a = open ("file.json")
+a = open ("test_file.json")
 file=json.load(a)
 for i in file ["dados"]:
     print (i)
 a.close()
 
 
-for i in range(1, 5):
+for i in range(1):
     if file:'opt'== 'NOT' 
     print(i)
-    print(j)
 
     if file.opt1()== True:
         file.resultado2== False
