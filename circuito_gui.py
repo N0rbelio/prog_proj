@@ -3,6 +3,7 @@ import os
 import sys
 from tkinter import *
 from time import strftime
+from tkinter.tix import LabelEntry
 from tkinter.ttk import * # Inicializar widgets
 from tkinter import ttk
 import webbrowser
@@ -25,6 +26,9 @@ main.resizable(False, False)
 #iniciar blank canvas
 C = Canvas(main, bg="white", height=340, width=590)
 C.grid(row=1, column=0, pady = 5, padx = 5, sticky ='w')
+#Texto label debaixo
+labeltext = 'Por favor, abra um ficheiro JSON ou LogicView!'
+
 #Explorador de ficheiros
 def browseFiles():
     filename = filedialog.askopenfilename(initialdir = "/",
@@ -66,6 +70,7 @@ def demo():
     AND = C.create_line(108, 120, 320, 40, fill="green") 
     OR = C.create_arc(180, 150, 80, 210, start=0, extent=220, fill="red")
     NOT = C.create_oval(80, 30, 140, 150, fill="blue")
+    labeltext = 'Demo carregado com sucesso'
     C.grid()
 
 #Reset programa
@@ -90,10 +95,10 @@ def ajuda_janela():
     ll1.place(x=5, y=50)
 
 #Texto em baixo
-ll1 = Label(main,text ='Por favor, abra um ficheiro!')
+ll1 = Label(main,text = labeltext)
 # using place method we can set the position of label
 ll1.place(x=7, y=357)
-#Criar botão
+#Criar botões
 btnreset = Button(main, text = 'Reset', command = erase_design)
 btnreset.place(x=520, y=353)
 btnlimpa = Button(main, text = 'Limpar', command = limpar_canva)
