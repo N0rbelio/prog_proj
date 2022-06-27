@@ -1,3 +1,4 @@
+import imp
 from tkinter import *
 from time import strftime
 from tkinter.ttk import * # Inicializar widgets
@@ -5,7 +6,7 @@ from tkinter import ttk
 import webbrowser
 # import filedialog module
 from tkinter import filedialog
-import portas_logicas
+from portas_logicas import *
 
 class Window(Frame):
     def __init__(self, master=None):
@@ -15,14 +16,13 @@ class Window(Frame):
 # Inicializar o GUI tkinter
 main = Tk()
 # Opçoes janela main
-main.geometry('600x400') # Definir tamanho
+main.geometry('605x405') # Definir tamanho
 main.wm_title("Design circuito") # Definir titulo da janela
 main.iconbitmap("favicon.ico")
 main.resizable(False, False)
 #iniciar blank canvas
 C = Canvas(main, bg="white", height=340, width=590)
-C.pack()
-
+C.grid(row=1, column=0, pady = 5, padx = 5, sticky ='w')
 #Explorador de ficheiros
 def browseFiles():
     filename = filedialog.askopenfilename(initialdir = "/",
@@ -36,7 +36,7 @@ def open_toplevel():
     top.title("Sobre")
     top.resizable(False, False)
     l2 = Label(top, text = "Este projeto foi criado por: Andre Oliveira, Daniel Oleksiychuk e Tiago Loureiro")
-    l2.pack()
+    l2.grid()
 
     #url
     url = "https://github.com/N0rbelio/prog_proj"
@@ -50,13 +50,21 @@ def open_toplevel():
     photoimage = photo.subsample(3, 3)
     # image on LEFT side of button
     Button(top, text = 'Abrir Repositorio', command = openweb, image = photoimage,
-                        compound = TOP).pack(side = TOP)
+                        compound = TOP).grid()
 
     top.mainloop()
 
-#Importar demo
-def test_design():
-    portas_logicas.gates() #this call a function from example file
+#Importar de outro demo
+def import_demo():
+    C.delete('all')
+    gates()
+
+#demo
+def demo():
+    AND = C.create_line(108, 120, 320, 40, fill="green") 
+    OR = C.create_arc(180, 150, 80, 210, start=0, extent=220, fill="red")
+    NOT = C.create_oval(80, 30, 140, 150, fill="blue")
+    C.grid()
 
 #Apagar canvas
 def erase_design():
@@ -70,7 +78,7 @@ def ajuda_janela():
     ajuda.resizable(False, False)
 
     titlo = Label(ajuda, text = "Ajuda para Design Circuito", font=("Arial", 20))
-    titlo.pack()
+    titlo.grid(row=5, column=0, pady = 5, padx = 5, sticky ='w')
 
     ll1 = Label(ajuda,text ='O programa permite abrir ficheiros JSON ou LogicView para demonstrar as portas logicas num plano. ', wraplength=490)
     # using place method we can set the position of label
@@ -79,14 +87,12 @@ def ajuda_janela():
 #Texto em baixo
 ll1 = Label(main,text ='Por favor, abra um ficheiro!')
 # using place method we can set the position of label
-ll1.place(x=5, y=352)
+ll1.place(x=7, y=357)
 #Criar botão
-btn = Button(main, text = 'Reset',
-                command = erase_design)
-btn.place(x=517, y=348)
-btn2 = Button(main, text = 'Calcular',
-                command = None)
-btn2.place(x=439, y=348)
+btn = Button(main, text = 'Reset', command = erase_design)
+btn.place(x=520, y=353)
+btn2 = Button(main, text = 'Calcular', command = import_demo)
+btn2.place(x=442, y=353)
 
 # Cria menubar
 menubar = Menu(main)
@@ -94,7 +100,7 @@ menubar = Menu(main)
 file = Menu(menubar, tearoff = 0)
 menubar.add_cascade(label ='Ficheiro', menu = file)
 file.add_command(label ='Abrir...', command = browseFiles)
-file.add_command(label ='Modo DEMO', command = test_design)
+file.add_command(label ='Modo DEMO', command = demo)
 file.add_separator()
 file.add_command(label ='Sair', command = main.destroy)
   
