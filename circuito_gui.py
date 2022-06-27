@@ -36,7 +36,7 @@ def open_toplevel():
     l2 = Label(top, text = "    Este projeto foi criado por: Andre Oliveira, Daniel Oleksiychuk e Tiago Loureiro")
     l2.grid()
 
-    #url
+    #URL
     url = "https://github.com/N0rbelio/prog_proj"
     #Abrir pagina web
     def openweb():
@@ -87,8 +87,7 @@ def ajuda_janela():
     # Resizing image to fit on button
     photoimage = photo.subsample(2, 2)
     # image on LEFT side of button
-    Button(ajuda, command = None, image = photoimage,
-                        compound = CENTER).grid()
+    Button(ajuda, command = None, image = photoimage, compound = CENTER).grid()
 
     titlo = Label(ajuda, text = "Ajuda para Design Circuito", font=("Arial", 20))
     titlo.place(relx = 0.55, rely = 0.04, anchor = 'n')
