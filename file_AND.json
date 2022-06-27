@@ -1,19 +1,19 @@
 {
     "AND":[
             {
-                "id":1, "opt1":"true" ,"opt2":"false", "resultado1":"false"
+                "id":1, "opt1":"true" ,"opt2":"false", "resul":"false"
             },
 
             {
-                "id":2, "opt1":"false" ,"opt2":"true", "resultado2": "false"
+                "id":2, "opt1":"false" ,"opt2":"true", "resul": "false"
             },
 
             {
-                "id":3, "opt1":"true" ,"opt2":"true", "resultado3": "true"
+                "id":3, "opt1":"true" ,"opt2":"true", "resul": "true"
             },
 
             {
-                "id":4, "opt1":"false" ,"opt2":"false", "resultado4": "false"
+                "id":4, "opt1":"false" ,"opt2":"false", "resul": "false"
             }
     ]
 }
