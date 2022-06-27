@@ -1,18 +1,9 @@
-import imp
-import os
-import sys
+import webbrowser, os, sys
 from tkinter import *
-from time import strftime
 from tkinter.tix import LabelEntry
-from tkinter.ttk import * # Inicializar widgets
-from tkinter import ttk
-import webbrowser
-# import filedialog module
-from tkinter import filedialog
+from tkinter.ttk import *
+from tkinter import ttk, filedialog
 from portas_logicas import *
-
-#Texto label debaixo
-labeltext = 'Por favor, abra um ficheiro JSON ou LogicView!'
 
 class Window(Frame):
     def __init__(self, master=None):
@@ -39,10 +30,10 @@ def browseFiles():
 #Cria janela sobre
 def open_toplevel():
     top = Toplevel()
-    top.geometry("500x130")
+    top.geometry("450x130")
     top.title("Sobre")
     top.resizable(False, False)
-    l2 = Label(top, text = "Este projeto foi criado por: Andre Oliveira, Daniel Oleksiychuk e Tiago Loureiro")
+    l2 = Label(top, text = "    Este projeto foi criado por: Andre Oliveira, Daniel Oleksiychuk e Tiago Loureiro")
     l2.grid()
 
     #url
@@ -68,7 +59,6 @@ def demo():
     AND = C.create_line(108, 120, 320, 40, fill="green") 
     OR = C.create_arc(180, 150, 80, 210, start=0, extent=220, fill="red")
     NOT = C.create_oval(80, 30, 140, 150, fill="blue")
-    C.grid()
 
 #Reset programa
 def erase_design():
@@ -92,17 +82,32 @@ def ajuda_janela():
     ajuda.title("Ajuda")
     ajuda.resizable(False, False)
 
+    # Creating a photoimage object to use image
+    photo = PhotoImage(file = r"ajuda.png")
+    # Resizing image to fit on button
+    photoimage = photo.subsample(2, 2)
+    # image on LEFT side of button
+    Button(ajuda, command = None, image = photoimage,
+                        compound = CENTER).grid()
+
     titlo = Label(ajuda, text = "Ajuda para Design Circuito", font=("Arial", 20))
-    titlo.grid(row=5, column=0, pady = 5, padx = 5, sticky ='w')
+    titlo.place(relx = 0.55, rely = 0.04, anchor = 'n')
 
-    ll1 = Label(ajuda,text ='O programa permite abrir ficheiros JSON ou LogicView para demonstrar as portas logicas num plano. ', wraplength=490)
+    ll1 = Label(ajuda,text ='O que é o Design Circuito?', font=("Arial Rounded MT Bold", 10))
+    ll1.place(x=5, y=80)
+
+    ll1 = Label(ajuda,text ='O Design circuito é programa que permite abrir ficheiros JSON ou LogicView para demonstrar as portas logicas num plano. Os ficheiros podem ser customisados a gosto e manualmente com IDEs populares', wraplength=494)
     # using place method we can set the position of label
-    ll1.place(x=5, y=50)
+    ll1.place(x=5, y=100)
 
-#Texto em baixo
-ll1 = Label(main,text = labeltext)
-# using place method we can set the position of label
+    ajuda.mainloop()
+
+#Texto label debaixo
+labeltext = 'Por favor, abra um ficheiro JSON ou LogicView!'
+#Texto posição
+ll1 = Label(main, text = labeltext)
 ll1.place(x=7, y=357)
+
 #Criar botões
 btnreset = Button(main, text = 'Reset', command = erase_design)
 btnreset.place(x=520, y=353)
@@ -127,6 +132,9 @@ menubar.add_cascade(label ='Ajuda', menu = help_)
 help_.add_command(label ='Ajuda - Guia', command = ajuda_janela)
 help_.add_separator()
 help_.add_command(label ='Sobre', command = open_toplevel)
+
+ll1 = Label(main,text = labeltext)
+ll1.place(x=7, y=357)
 
 # Mostrar janela (colocar sempre no final do ciclo da janela root (principal))
 main.config(menu = menubar)
