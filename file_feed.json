@@ -3,8 +3,16 @@
 	[
 		{"id": 1, "op": "AND", "opt1": "true", "opt2": "true", "resultado": "true"},
 		{"id": 2, "op": "OR", "opt1": "true", "opt2": "false", "resultado": ""}, 
-		{"id": 3, "op": "NOT", "opt1": "resultado", "resultado": ""}, 
+		{"id": 3, "op": "NOT", "opt1": [{"id" : "product_1", "type" : "resultado"}], "resultado": ""}, 
 		{"id": 4, "op": "AND", "opt1": "false", "opt2": "false", "resultado": "false"}, 
 		{"id": 5, "op": "OR", "opt1": "resultado3", "opt2": "resultado2", "resultado": ""}
+	]
+}
+
+{
+	"category" : 
+	[
+		{"id": 1, "product" : [{"id" : "product_1", "type" : "ball"}]},
+		{"id" : 2, "product" : [{"id" : "product_2", "type" : "pen"}]}
 	]
 }
