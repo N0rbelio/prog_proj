@@ -8,11 +8,3 @@
 		{"id": 5, "op": "OR", "opt1": "resultado3", "opt2": "resultado2", "resultado": ""}
 	]
 }
-
-{
-	"category" : 
-	[
-		{"id": 1, "product" : [{"id" : "product_1", "type" : "ball"}]},
-		{"id" : 2, "product" : [{"id" : "product_2", "type" : "pen"}]}
-	]
-}
