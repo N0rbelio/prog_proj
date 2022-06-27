@@ -1,4 +1,6 @@
 import imp
+import os
+import sys
 from tkinter import *
 from time import strftime
 from tkinter.ttk import * # Inicializar widgets
@@ -66,9 +68,12 @@ def demo():
     NOT = C.create_oval(80, 30, 140, 150, fill="blue")
     C.grid()
 
-#Apagar canvas
+#Reset programa
 def erase_design():
-     C.delete('all')
+     os.execv(sys.executable, ['python'] + sys.argv)
+#Apagar canvas
+def limpar_canva():
+    C.delete("all")
 
 #Cria janela ajuda
 def ajuda_janela():
@@ -89,10 +94,12 @@ ll1 = Label(main,text ='Por favor, abra um ficheiro!')
 # using place method we can set the position of label
 ll1.place(x=7, y=357)
 #Criar botão
-btn = Button(main, text = 'Reset', command = erase_design)
-btn.place(x=520, y=353)
-btn2 = Button(main, text = 'Calcular', command = import_demo)
-btn2.place(x=442, y=353)
+btnreset = Button(main, text = 'Reset', command = erase_design)
+btnreset.place(x=520, y=353)
+btnlimpa = Button(main, text = 'Limpar', command = limpar_canva)
+btnlimpa.place(x=440, y=353)
+btncalcular = Button(main, text = 'Calcular', command = import_demo)
+btncalcular.place(x=360, y=353)
 
 # Cria menubar
 menubar = Menu(main)
