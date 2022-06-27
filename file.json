@@ -1,10 +1,1 @@
-{
-    "dados": 
-    [
-    {"id": 1, "op": "AND", "opt1": "true", "opt2": "false", "resultado0":""}, 
-    {"id": 2, "op": "OR", "opt1": "1", "opt2": false, "resultado1": ""}, 
-    {"id": 3, "op": "NOT", "opt1": "resultado1", "resultado2": ""}, 
-    {"id": 4, "op": "AND", "opt1": "resultado0", "opt2": "resultado1", "resultado3": ""}, 
-    {"id": 5, "op": "OR", "opt1": "resultado3", "opt2": "resultado2", "resultado4": ""}
-    ]
-}
+{"dados": [{"id": 1, "op": "AND", "opt1": "true", "opt2": "true", "resultado": "true"}, {"id": 2, "op": "OR", "opt1": "true", "opt2": "false", "resultado": ""}, {"id": 3, "op": "NOT", "opt1": "resultado", "resultado": ""}, {"id": 4, "op": "AND", "opt1": "false", "opt2": "false", "resultado": "false"}, {"id": 5, "op": "OR", "opt1": "resultado3", "opt2": "resultado2", "resultado": ""}]}
