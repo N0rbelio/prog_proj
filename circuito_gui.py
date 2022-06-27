@@ -11,6 +11,9 @@ import webbrowser
 from tkinter import filedialog
 from portas_logicas import *
 
+#Texto label debaixo
+labeltext = 'Por favor, abra um ficheiro JSON ou LogicView!'
+
 class Window(Frame):
     def __init__(self, master=None):
         Frame.__init__(self, master)
@@ -26,8 +29,6 @@ main.resizable(False, False)
 #iniciar blank canvas
 C = Canvas(main, bg="white", height=340, width=590)
 C.grid(row=1, column=0, pady = 5, padx = 5, sticky ='w')
-#Texto label debaixo
-labeltext = 'Por favor, abra um ficheiro JSON ou LogicView!'
 
 #Explorador de ficheiros
 def browseFiles():
@@ -60,25 +61,29 @@ def open_toplevel():
 
     top.mainloop()
 
-#Importar de outro demo
-def import_demo():
-    C.delete('all')
-    gates()
-
 #demo
 def demo():
+    C = Canvas(main, bg="white", height=340, width=590)
+    C.grid(row=1, column=0, pady = 5, padx = 5, sticky ='w')
     AND = C.create_line(108, 120, 320, 40, fill="green") 
     OR = C.create_arc(180, 150, 80, 210, start=0, extent=220, fill="red")
     NOT = C.create_oval(80, 30, 140, 150, fill="blue")
-    labeltext = 'Demo carregado com sucesso'
     C.grid()
 
 #Reset programa
 def erase_design():
      os.execv(sys.executable, ['python'] + sys.argv)
+
 #Apagar canvas
 def limpar_canva():
-    C.delete("all")
+    C = Canvas(main, bg="white", height=340, width=590)
+    C.grid(row=1, column=0, pady = 5, padx = 5, sticky ='w')
+    C.delete('all')
+
+#Importar de outro demo
+def import_demo():
+    C.delete('all')
+    gates()
 
 #Cria janela ajuda
 def ajuda_janela():
