@@ -33,7 +33,8 @@ def end_line(event=None):
 
 ###########################
 ##OR Gate
-#Cop.create_rectangle(10, 10, 70, 70, fill='white', outline='blue', width=3) 
+tripontos = [150, 100, 150, 120, 180, 110]
+Cop.create_polygon(tripontos, outline='black', fill='white', width=3)
 
 #NOT Gate
 #Na seguinte estrutura [x1, y1, x2, y2 ...]
