@@ -1,0 +1,5 @@
+{"dados": [{"id": 1, "op": "AND", "opt1": "true", "opt2": "false", "resultado": ""}, 
+{"id": 2, "op": "OR", "opt1": "true", "opt2": "false", "resultado": ""}, 
+{"id": 3, "op": "NOT", "opt1": "false", "resultado": ""}, 
+{"id": 4, "op": "AND", "opt1": "true", "opt2": "false", "resultado": ""}, 
+{"id": 5, "op": "OR", "opt1": "false", "opt2": "true", "resultado": ""}]}
