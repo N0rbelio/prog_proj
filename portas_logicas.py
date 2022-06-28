@@ -9,10 +9,16 @@ def gates():
     
     ##OR Gate
     #Cop.create_rectangle(10, 10, 70, 70, fill='white', outline='blue', width=3) 
-    
+    tripontos = [150, 250, 155, 275, 150, 300, 180, 297, 190, 294, 210, 275, 192, 260, 180, 255]
+    Cop.create_polygon(tripontos, outline='black', fill='white', width=3)
+    Cop.create_line(210, 275, 229, 275, fill="green", width=3)
+    #entrada linhas
+    Cop.create_line(132, 265, 152, 265, fill="green", width=3)
+    Cop.create_line(132, 285, 152, 285, fill="green", width=3)
+
     #NOT Gate
     #Na seguinte estrutura [x1, y1, x2, y2 ...]
-    tripontos = [150, 100, 150, 120, 180, 110]
+    tripontos = [150, 100, 150, 120, 180, 110,]
     Cop.create_polygon(tripontos, outline='black', fill='white', width=3)
     circpontos = [175,105,185,115]
     Cop.create_oval(circpontos, outline='black', fill='white', width=3)

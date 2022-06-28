@@ -21,11 +21,16 @@ main.resizable(False, False)
 C = Canvas(main, bg="white", height=340, width=590)
 C.grid(row=1, column=0, pady = 5, padx = 5, sticky ='w')
 
+# Create a File Explorer label
+label_info = Label(main, text = "Por favor, abra um ficheiro JSON ou LogicView!", anchor='se')
+label_info.place(x=7, y=357)
+
 #Explorador de ficheiros
 def browseFiles():
     filename = filedialog.askopenfilename(initialdir = "/",
                                           title = "Selecione o ficheiro com as intruções",
                                           filetypes = (("Ficheiros JSON", "*.json*"), ("Ficheiros LogicView", "*.lcvw*"), ("Todos os ficheiros", "*.*")))
+    label_info.configure(text="Ficheiro aberto: "+filename)
 
 #Cria janela sobre
 def open_toplevel():
@@ -59,6 +64,7 @@ def demo():
     AND = C.create_line(108, 120, 320, 40, fill="green") 
     OR = C.create_arc(180, 150, 80, 210, start=0, extent=220, fill="red")
     NOT = C.create_oval(80, 30, 140, 150, fill="blue")
+    label_info.configure(text="Modo demo iniciado")
 
 #Reset programa
 def erase_design():
@@ -69,11 +75,13 @@ def limpar_canva():
     C = Canvas(main, bg="white", height=340, width=590)
     C.grid(row=1, column=0, pady = 5, padx = 5, sticky ='w')
     C.delete('all')
+    label_info.configure(text="Canvas foi limpo")
 
 #Importar de outro demo
 def import_demo():
     C.delete('all')
     gates()
+    label_info.configure(text="Ficheiro calculado ")
 
 #Cria janela ajuda
 def ajuda_janela():
@@ -101,12 +109,6 @@ def ajuda_janela():
 
     ajuda.mainloop()
 
-#Texto label debaixo
-labeltext = 'Por favor, abra um ficheiro JSON ou LogicView!'
-#Texto posição
-ll1 = Label(main, text = labeltext)
-ll1.place(x=7, y=357)
-
 #Criar botões
 btnreset = Button(main, text = 'Reset', command = erase_design)
 btnreset.place(x=520, y=353)
@@ -131,9 +133,6 @@ menubar.add_cascade(label ='Ajuda', menu = help_)
 help_.add_command(label ='Ajuda - Guia', command = ajuda_janela)
 help_.add_separator()
 help_.add_command(label ='Sobre', command = open_toplevel)
-
-ll1 = Label(main,text = labeltext)
-ll1.place(x=7, y=357)
 
 # Mostrar janela (colocar sempre no final do ciclo da janela root (principal))
 main.config(menu = menubar)
