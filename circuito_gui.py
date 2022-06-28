@@ -5,6 +5,7 @@ from tkinter.tix import LabelEntry
 from tkinter.ttk import *
 from tkinter import ttk, filedialog
 from logicviewfile import *
+from tabela_resolucao import tabela
 
 class Window(Frame):
     def __init__(self, master=None):
@@ -89,9 +90,10 @@ def limpar_canva():
     label_info.configure(text="Canvas foi limpo")
 
 #Importar de outro demo
-def import_demo():
+def calcular_file():
     C.delete('all')
     gates()
+    tabela()
     label_info.configure(text="Ficheiro calculado ")
 
 #Cria janela ajuda
@@ -125,7 +127,7 @@ btnreset = Button(main, text = 'Reset', command = erase_design)
 btnreset.place(x=520, y=353)
 btnlimpa = Button(main, text = 'Limpar', command = limpar_canva)
 btnlimpa.place(x=440, y=353)
-btncalcular = Button(main, text = 'Calcular', command = import_demo)
+btncalcular = Button(main, text = 'Calcular', command = calcular_file)
 btncalcular.place(x=360, y=353)
 
 # Cria menubar
