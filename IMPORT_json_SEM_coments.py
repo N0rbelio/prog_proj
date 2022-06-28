@@ -21,7 +21,6 @@ for plogica in file["dados"]:
         for pAND in file_AND["AND"]: 
             if (plogica['opt1'] == pAND["opt1"]) and (plogica['opt2'] == pAND["opt2"]):
                 res1=pAND["resul"]  #vai guardar o resultado nesta variavel temporaria 
-                print(res1) 
                 plogica["resultado"]=res1 #envia o resultado da variavel temporaria para a variavel resultado do ficheiro file_feed
             with open('file_feed.json', 'w') as f: 
                 json.dump(file, f) 
@@ -32,8 +31,7 @@ for plogica in file["dados"]:
     if plogica["op"] == "OR": 
         for pOR in file_OR["OR"]: 
             if (plogica['opt1'] == pOR["opt1"]) and (plogica['opt2'] == pOR["opt2"]): 
-                res2=pOR["result"] 
-                print(res2) 
+                res2=pOR["result"]  
                 plogica["resultado"]=res2  #envia o resultado da variavel temporaria para a variavel resultado do ficheiro file_feed
             with open('file_feed.json', 'w') as f:
                 json.dump(file, f) 
@@ -47,7 +45,6 @@ for plogica in file["dados"]:
         for pNOT in file_NOT["NOT"]:
                 if plogica['opt1'] == pNOT["opt1"]:
                     res3=pNOT["res"] 
-                    print(res3)
                     plogica["resultado"]=res3 
                     with open('file_feed.json', 'w') as f:
                         json.dump(file, f) 
