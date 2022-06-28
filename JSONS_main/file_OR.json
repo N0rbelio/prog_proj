@@ -1,0 +1,19 @@
+{
+    "OR":[
+            {
+                "id":1, "opt1":"true" ,"opt2":"false", "result":"true"
+            },
+
+            {
+                "id":2, "opt1":"false" ,"opt2":"true", "result": "true"
+            },
+
+            {
+                "id":3, "opt1":"true" ,"opt2":"true", "result": "true"
+            },
+
+            {
+                "id":4, "opt1":"false" ,"opt2":"false", "result": "false"
+            }
+    ]
+}
