@@ -2,6 +2,7 @@
 ### Para circuito_gui.py
 ###
 from tkinter import Canvas
+from tkinter import Label
 
 def gates():
     Cop = Canvas(bg ='white', height=340, width=590)
@@ -63,3 +64,27 @@ def gates():
     #Ligação ao OR 2 Gate
     Cop.create_line(200+posNOT1,110+posNOT1,362+posOR1, 265+posOR1, fill="green", width=3)
     Cop.create_line(200+posAND1,170+posAND1,362+posOR1, 285+posOR1, fill="green", width=3)
+
+    ##LABELS
+    label_info = Label(Cop, text = "T", font=("Arial Rounded MT Bold", 10))
+    label_info.place(x=20, y=70)
+    label_info = Label(Cop, text = "1", font=("Arial Rounded MT Bold", 10))
+    label_info.place(x=20, y=50)
+    label_info = Label(Cop, text = "2", font=("Arial Rounded MT Bold", 10))
+    label_info.place(x=20, y=80)
+    label_info = Label(Cop, text = "F", font=("Arial Rounded MT Bold", 10))
+    label_info.place(x=20, y=100)
+    label_info = Label(Cop, text = "F", font=("Arial Rounded MT Bold", 10))
+    label_info.place(x=120, y=70)
+    label_info = Label(Cop, text = "T", font=("Arial Rounded MT Bold", 10))
+    label_info.place(x=180, y=70)
+    label_info = Label(Cop, text = "F", font=("Arial Rounded MT Bold", 10))
+    label_info.place(x=215, y=170)
+    label_info = Label(Cop, text = "T", font=("Arial Rounded MT Bold", 10))
+    label_info.place(x=20, y=170)
+    label_info = Label(Cop, text = "F", font=("Arial Rounded MT Bold", 10))
+    label_info.place(x=20, y=190)
+    label_info = Label(Cop, text = "F", font=("Arial Rounded MT Bold", 10))
+    label_info.place(x=130, y=200)
+    label_info = Label(Cop, text = "T", font=("Arial Rounded MT Bold", 10))
+    label_info.place(x=320, y=135)
