@@ -1,4 +1,4 @@
-### Modelos desenho portas logicas
+### LogicView modelo desenho portas logicas
 ### Para circuito_gui.py
 ###
 from tkinter import Canvas

@@ -1,9 +1,10 @@
 import webbrowser, os, sys
 from tkinter import *
+from tkinter import messagebox
 from tkinter.tix import LabelEntry
 from tkinter.ttk import *
 from tkinter import ttk, filedialog
-from portas_logicas import *
+from logicviewfile import *
 
 class Window(Frame):
     def __init__(self, master=None):
@@ -27,10 +28,20 @@ label_info.place(x=7, y=357)
 
 #Explorador de ficheiros
 def browseFiles():
+    messagebox.showinfo(title="Importar intruções JSON", message="Para importar instruções tem que introduzir 2 ficheiros, introduza o ficheiro JSON.")
     filename = filedialog.askopenfilename(initialdir = "/",
                                           title = "Selecione o ficheiro com as intruções",
-                                          filetypes = (("Ficheiros JSON", "*.json*"), ("Ficheiros LogicView", "*.lcvw*"), ("Todos os ficheiros", "*.*")))
-    label_info.configure(text="Ficheiro aberto: "+filename)
+                                          filetypes = (("Ficheiros JSON", "*.json*"), ("Todos os ficheiros", "*.*")))
+    if filename == "":
+        messagebox.showinfo(title="Erro", message="Nenhum ficheiro foi importado.")
+        exit
+    else:
+        label_info.configure(text="Ficheiro aberto: "+ filename)
+        messagebox.showinfo(title="Importar intruções JSON", message="Introduza agora o ficheiro LogicView.")
+        filename = filedialog.askopenfilename(initialdir = "/",
+                                            title = "Selecione o ficheiro com as intruções",
+                                            filetypes = (("Ficheiros LogicView", "*.lcvw*"), ("Todos os ficheiros", "*.*")))
+        label_info.configure(text="Ficheiro aberto: "+filename)
 
 #Cria janela sobre
 def open_toplevel():
@@ -103,7 +114,7 @@ def ajuda_janela():
     ll1 = Label(ajuda,text ='O que é o Design Circuito?', font=("Arial Rounded MT Bold", 10))
     ll1.place(x=5, y=80)
 
-    ll1 = Label(ajuda,text ='O Design circuito é programa que permite abrir ficheiros JSON ou LogicView para demonstrar as portas logicas num plano. Os ficheiros podem ser customisados a gosto e manualmente com IDEs populares', wraplength=494)
+    ll1 = Label(ajuda,text ='O Design circuito é programa que permite abrir ficheiros JSON e LogicView para demonstrar as portas logicas num plano e seus resultados. Os ficheiros podem ser customisados a gosto e manualmente com IDEs populares', wraplength=494)
     # using place method we can set the position of label
     ll1.place(x=5, y=100)
 
